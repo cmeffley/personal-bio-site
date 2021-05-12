@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import {
   Collapse,
-  Button,
   Navbar,
   NavbarToggler,
+  NavbarBrand,
   Nav,
   NavItem,
+  Button,
 } from 'reactstrap';
 import { signInUser, signOutUser } from '../helpers/auth';
 
@@ -16,44 +17,34 @@ const NavBar = ({ user }) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
-  const authenticated = () => (
-  <>
-    <NavItem>
-      <Link className="nav-link" to="/"></Link>
-    </NavItem>
-    <NavItem>
-      <Link className="nav-link" to="/"></Link>
-    </NavItem>
-  </>
-  );
-
   return (
     <div>
-      <Navbar color="light" light expand="md">
-          <Link className='navbar-brand' to="/">React</Link>
+      <Navbar color="dark" dark expand="md">
+        <NavbarBrand href="/">Home</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            {user && authenticated()}
-              {
-                user !== null
-                && <NavItem>
-                  {
-                    user
-                      ? <Button color='danger' onClick={signOutUser}>Sign Out</Button>
-                      : <Button color='info' onClick={signInUser}>Sign In</Button>
-                  }
-                </NavItem>
-              }
+            <NavItem>
+              <Link className="nav-link" to="/about">About</Link>
+            </NavItem>
+            <NavItem>
+              <Link className="nav-link" to="/tech">Tech Used</Link>
+            </NavItem>
           </Nav>
+          { user !== null
+            && <div className='auth-btn-container'>
+                {
+                  user ? <Button color='danger' onClick={signOutUser}>SignOut?</Button>
+                    : <Button color='info' onClick={signInUser}>SignIN!</Button>
+                }
+              </div>
+            }
         </Collapse>
       </Navbar>
     </div>
   );
 };
-
 NavBar.propTypes = {
   user: PropTypes.any
 };
-
 export default NavBar;
