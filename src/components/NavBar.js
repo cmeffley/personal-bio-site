@@ -19,8 +19,8 @@ const NavBar = ({ user }) => {
 
   return (
     <div>
-      <Navbar color="dark" dark expand="md">
-        <NavbarBrand href="/">Home</NavbarBrand>
+      <Navbar className='navigation' color="light" light expand="md">
+        <NavbarBrand href="/">Chris Meffley</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
