@@ -5,8 +5,8 @@
 }
 
 .about-container {
-  // background-color: black;
-  // color: #fff;
+  background-color: black;
+  color: #fff;
   padding: 5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -17,9 +17,4 @@
 
 .aboutMe {
   text-align: left;
-}
-
-.button {
-  height: 25px;
-  width: 25px;
 }

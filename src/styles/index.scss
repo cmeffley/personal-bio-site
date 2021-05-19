@@ -52,23 +52,30 @@ body {
 .greeting {
   position: absolute;
   top: 40%;
-  left: 50%;
+  left: 42%;
   font-size: 6rem;
   z-index: 19;
   color: #fff;
-  transform: translate(-50%, -40%)
+  // transform: translate(-50%, -50%)
 }
 
 .name {
   position: absolute;
-  top: 60%;
-  left: 50%;
+  top: 55%;
+  left: 42%;
   font-size: 6rem;
   z-index: 19;
   color: #fff;
-  transform: translate(-50%, -60%)
+  // transform: translate(-50%, -50%)
 }
 
 .navigation {
   background: linear-gradient(to top, rgb(231, 230, 230), transparent);
+}
+
+#arrowIcon {
+  color: white;
+  position: absolute;
+  top: 88%;
+  z-index: 21;
 }
