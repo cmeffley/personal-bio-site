@@ -28,7 +28,7 @@ body {
   bottom: -95px;
   width: 1775px;
   right: 0;
-  z-index: 6;
+  z-index: 20;
 }
 
 .side {
@@ -36,7 +36,7 @@ body {
   bottom: 90px;
   width: 1550px;
   left: 0;
-  z-index: 4;
+  z-index: 18;
 }
 
 .mountain {
@@ -46,29 +46,29 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 3;
+  z-index: 17;
 }
 
 .greeting {
   position: absolute;
-  top: 45%;
+  top: 40%;
   left: 50%;
   font-size: 6rem;
-  z-index: 5;
+  z-index: 19;
   color: #fff;
-  transform: translate(-50%, -45%)
+  transform: translate(-50%, -40%)
 }
 
 .name {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   font-size: 6rem;
-  z-index: 5;
+  z-index: 19;
   color: #fff;
+  transform: translate(-50%, -60%)
 }
 
 .navigation {
-  position: absolute;
   background: linear-gradient(to top, rgb(231, 230, 230), transparent);
 }
