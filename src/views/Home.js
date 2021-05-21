@@ -27,17 +27,19 @@ function Home() {
       >I&apos;m Chris Meffley</h1>
       <header className='header'>
         <img src={front} className='front'
-          style={{ transform: `translateY(${offSetY * 0.5}px)` }}
+          style={{ transform: `translateY(-${offSetY * 0.3}px)` }}
         />
         <img src={side} className='side'
-          style={{ transform: `translateY(${offSetY * 0.5}px)` }}
+          style={{ transform: `translateY(-${offSetY * 0.3}px)` }}
         />
         <img src={mountain} className='mountain'
-          style={{ transform: `translateY(${offSetY * 0.4}px)` }}
+          style={{ transform: `translateY(${offSetY * 0.1}px)` }}
         />
         <Icon id='arrowIcon' name='angle double down' size='big'/>
       </header>
-      <About style={{ transform: `translateY(${offSetY * 0.1}px)` }}/>
+      <About
+      style={{ transform: `translateY(${offSetY * 0.2}px)` }}
+      />
       <Tech />
     </>
   );
