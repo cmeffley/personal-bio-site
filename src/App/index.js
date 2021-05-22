@@ -8,16 +8,15 @@ import NavBar from '../components/NavBar';
 
 function App() {
   const [admin, setAdmin] = useState(null);
-  const [loggedInUser, setLoggedInUser] = useState(null);
-  console.warn(loggedInUser);
-  console.warn(admin);
+  // const [loggedInUser, setLoggedInUser] = useState(null);
+
   useEffect(() => {
     firebase.auth().onAuthStateChanged((authed) => {
       if (authed && (authed.uid === process.env.REACT_APP_ADMIN_UID)) {
         setAdmin(true);
       } else if (admin || admin === null) {
         setAdmin(false);
-        setLoggedInUser(false);
+        // setLoggedInUser(false);
       }
     });
   }, []);
