@@ -6,19 +6,19 @@ import About from '../views/About';
 import ProjectCards from '../views/ProjectCards';
 import TechUsed from '../views/TechUsed';
 
-function Routes({ user }) {
+function Routes({ admin }) {
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={() => <Home user={user} />} />
-        <Route exact path="/about" component={() => <About user={user} />} />
-        <Route exact path="/projects" component={() => <ProjectCards user={user} />} />
-        <Route exact path="/tech" component={() => <TechUsed user={user} />} />
+        <Route exact path="/" component={() => <Home admin={admin} />} />
+        <Route exact path="/about" component={() => <About admin={admin} />} />
+        <Route exact path="/projects" component={() => <ProjectCards admin={admin} />} />
+        <Route exact path="/tech" component={() => <TechUsed admin={admin} />} />
       </Switch>
     </div>
   );
 }
 Routes.propTypes = {
-  user: PropTypes.any,
+  admin: PropTypes.any,
 };
 export default Routes;

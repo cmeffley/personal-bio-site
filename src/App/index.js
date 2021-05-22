@@ -1,37 +1,32 @@
-import React, { useState } from 'react';
-// import firebase from 'firebase/app';
+import React, { useState, useEffect } from 'react';
+import firebase from 'firebase';
 import { BrowserRouter as Router } from 'react-router-dom';
-import 'firebase/auth';
 import './App.scss';
+// import firebaseConfig from '../helpers/apiKeys';
 import Routes from '../helpers/Routes';
 import NavBar from '../components/NavBar';
 
 function App() {
-  // When you set up firebase add setUser method and change useState to null.
-  const [user] = useState(false);
-
-  // Checking for authenticated users. You must set up firebase authentication for this to work!
-  // useEffect(() => {
-  //   firebase.auth().onAuthStateChanged((authed) => {
-  //     if (authed) {
-  //       const userInfoObject = {
-  //         fullName: authed.displayName,
-  //         profileImage: authed.photoURL
-  //         username: authed.email.split('@gmail.com')[0],
-  //         uid: authed.uid
-  //       };
-  //       setUser(userInfoObject);
-  //     } else if (user || user === null) {
-  //       setUser(false);
-  //     }
-  //   });
-  // }, []);
+  const [admin, setAdmin] = useState(null);
+  const [loggedInUser, setLoggedInUser] = useState(null);
+  console.warn(loggedInUser);
+  console.warn(admin);
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((authed) => {
+      if (authed && (authed.uid === process.env.REACT_APP_ADMIN_UID)) {
+        setAdmin(true);
+      } else if (admin || admin === null) {
+        setAdmin(false);
+        setLoggedInUser(false);
+      }
+    });
+  }, []);
 
   return (
     <div className='App'>
        <Router>
-        <NavBar user={user}/>
-        <Routes user={user}/>
+        <NavBar user={admin}/>
+        <Routes user={admin}/>
       </Router>
     </div>
   );
