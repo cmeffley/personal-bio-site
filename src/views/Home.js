@@ -37,9 +37,7 @@ function Home() {
         />
         <Icon id='arrowIcon' name='angle double down' size='big'/>
       </header>
-      <About
-      style={{ transform: `translateY(${offSetY * 0.2}px)` }}
-      />
+      <About />
       <Tech />
     </>
   );

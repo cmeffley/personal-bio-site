@@ -62,18 +62,18 @@ body {
 
 .greeting {
   position: absolute;
-  top: 30%;
-  right: 25%;
+  top: 20%;
+  left: 12%;
   font-size: 6rem;
-  z-index: 19;
+  z-index: 18;
   color: #fff;
   // transform: translate(-50%, -50%)
 }
 
 .name {
   position: absolute;
-  bottom: 15%;
-  left: 10%;
+  top: 20%;
+  left: 35%;
   font-size: 6rem;
   z-index: 19;
   color: #fff;
