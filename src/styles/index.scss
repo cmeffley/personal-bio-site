@@ -90,3 +90,16 @@ body {
   top: 85%;
   z-index: 21;
 }
+
+#iconPic {
+  height: 75px;
+  width: 75px;
+}
+
+#tech-container {
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}

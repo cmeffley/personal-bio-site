@@ -6,8 +6,7 @@ function ProjectCards() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    getAllProjects(projects).then((response) => setProjects(response));
-    console.warn(projects);
+    getAllProjects().then((response) => setProjects(response));
   }, []);
   return (
     <div id='card-container'>
