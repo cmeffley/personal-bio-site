@@ -4,7 +4,6 @@ import front from '../assets/front.png';
 import side from '../assets/side.png';
 import mountain from '../assets/mountain.png';
 import About from './About';
-import Tech from './TechUsed';
 
 function Home() {
   const [offSetY, setOffSetY] = useState(0);
@@ -38,7 +37,6 @@ function Home() {
         <Icon id='arrowIcon' name='angle double down' size='big'/>
       </header>
       <About />
-      <Tech />
     </>
   );
 }
