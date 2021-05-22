@@ -15,7 +15,7 @@ function ProjectCards() {
           key={projectInfo.firebaseKey}
           {...projectInfo}
           setProjects={setProjects}
-          />
+        />
       ))}
     </div>
   );

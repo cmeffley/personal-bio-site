@@ -1,0 +1,32 @@
+{
+  "-MVnE1rOyFFlWgN3zYvL": {
+    "available": true,
+    "description": "Click the Let's Sort button to show a name entry form and then be randomly assigned to a Hogwart's house.",
+    "firebaseKey": "-MVnE1rOyFFlWgN3zYvL",
+    "githubUrl": "https://github.com/cmeffley/sorting-hat",
+    "screenshot": "https://firebasestorage.googleapis.com/v0/b/chrismeffley-bio-site.appspot.com/o/2021-02-05.png?alt=media&token=a1a04ae0-1c91-446b-b2b0-ae4ad8c7c383",
+    "technologiesUsed": "HTML, CSS, Javacript",
+    "title": "Sorting Hat",
+    "url": "https://cm-sorting-hat.netlify.app/"
+  },
+  "-MVnEIq_DJ7VK5-48Aic": {
+    "available": true,
+    "description": "A simplified version of the 90s hand-held game. Keep track of your points for four different activities: Eat, Play, Fight and Sleep.",
+    "firebaseKey": "-MVnEIq_DJ7VK5-48Aic",
+    "githubUrl": "https://github.com/cmeffley/ASSIGNMENT-Tamagotchi",
+    "screenshot": "https://firebasestorage.googleapis.com/v0/b/chrismeffley-bio-site.appspot.com/o/2021-03-02%20(2).png?alt=media&token=9754a750-90e4-4955-9ff0-75db3e4d0d72",
+    "technologiesUsed": "HTML, CSS, Javacript Modules",
+    "title": "Tamagotchi",
+    "url": "https://cm-tamagotchi.netlify.app/"
+  },
+  "-MVnETn4qUikS70OQk-X": {
+    "available": true,
+    "description": "A different version of Pinterest where you can create boards and pins of your interests",
+    "firebaseKey": "-MVnETn4qUikS70OQk-X",
+    "githubUrl": "https://github.com/cmeffley/ASSIGNMENT-Firebase-Pinterest",
+    "screenshot": "https://firebasestorage.googleapis.com/v0/b/chrismeffley-bio-site.appspot.com/o/2021-03-12.png?alt=media&token=f3390a57-d424-411e-9424-88359f6dcc6f",
+    "technologiesUsed": "Javascript Modules, Firebase",
+    "title": "Firebase Pinterest",
+    "url": "https://cm-firebasepinterest.netlify.app/"
+  }
+}
