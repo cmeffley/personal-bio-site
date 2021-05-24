@@ -7,6 +7,10 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
   NavItem,
   Button,
 } from 'reactstrap';
@@ -19,9 +23,19 @@ const NavBar = ({ admin }) => {
 
   const authenticated = () => (
     <>
-      <NavItem>
-        <Link className="nav-link" to="/editprojects">Edit Projects</Link>
-      </NavItem>
+       <UncontrolledDropdown nav inNavbar>
+          <DropdownToggle nav caret>
+            Admin Edit
+          </DropdownToggle>
+            <DropdownMenu right>
+              <DropdownItem>
+                <Link className="nav-link" to="/editprojects">Edit Projects</Link>
+              </DropdownItem>
+              <DropdownItem>
+                  Option 2
+              </DropdownItem>
+            </DropdownMenu>
+        </UncontrolledDropdown>
     </>
   );
 

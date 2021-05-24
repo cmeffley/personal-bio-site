@@ -6,6 +6,7 @@ import About from '../views/About';
 import ProjectCards from '../views/ProjectCards';
 import TechUsed from '../views/TechUsed';
 import EditProjects from '../views/EditProjects';
+import AdminAuth from '../components/AdminAuth';
 
 function Routes({ admin }) {
   return (
@@ -18,6 +19,10 @@ function Routes({ admin }) {
         <Route exact path="/editprojects"
           admin={admin}
           component={() => <EditProjects admin={admin}/>} />
+        <Route exact path="/auth"
+          admin={admin}
+          component={() => <AdminAuth admin={admin} />}
+        />
       </Switch>
     </div>
   );
