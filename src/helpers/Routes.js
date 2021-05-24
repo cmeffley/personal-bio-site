@@ -15,7 +15,9 @@ function Routes({ admin }) {
         <Route exact path="/about" component={About} />
         <Route exact path="/projects" component={() => <ProjectCards admin={admin} />} />
         <Route exact path="/tech" component={() => <TechUsed admin={admin} />} />
-        <Route exact path="/editprojects" component={() => <EditProjects admin={admin}/>} />
+        <Route exact path="/editprojects"
+          admin={admin}
+          component={() => <EditProjects admin={admin}/>} />
       </Switch>
     </div>
   );

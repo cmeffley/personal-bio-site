@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './App.scss';
-// import firebaseConfig from '../helpers/apiKeys';
 import Routes from '../helpers/Routes';
 import NavBar from '../components/NavBar';
 
