@@ -33,6 +33,9 @@ const NavBar = ({ user }) => {
             <NavItem>
               <Link className="nav-link" to="/tech">Tech Used</Link>
             </NavItem>
+            <NavItem>
+              <Link className="nav-link" to="/editprojects">Edit Projects</Link>
+            </NavItem>
           </Nav>
           { user !== null
             && <div className='auth-btn-container'>

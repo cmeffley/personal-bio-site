@@ -8,6 +8,7 @@ function ProjectCards() {
   useEffect(() => {
     getAllProjects().then((response) => setProjects(response));
   }, []);
+
   return (
     <div id='card-container'>
       {projects.map((projectInfo) => (
@@ -15,7 +16,7 @@ function ProjectCards() {
           key={projectInfo.firebaseKey}
           {...projectInfo}
           setProjects={setProjects}
-          />
+        />
       ))}
     </div>
   );
