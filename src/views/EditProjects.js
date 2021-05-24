@@ -8,8 +8,10 @@ function EditProjects() {
   useEffect(() => {
     getAllProjects().then((response) => setChangeProjects(response));
   }, []);
+
   return (
     <div>
+      {/* <EditProjectsForm/> */}
       {changeProjects.map((projectInfo) => (
          <EditProjectsForm
             key={projectInfo.firebaseKey}

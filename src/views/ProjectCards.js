@@ -8,6 +8,7 @@ function ProjectCards() {
   useEffect(() => {
     getAllProjects().then((response) => setProjects(response));
   }, []);
+
   return (
     <div id='card-container'>
       {projects.map((projectInfo) => (

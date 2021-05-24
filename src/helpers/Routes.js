@@ -15,12 +15,12 @@ function Routes({ user }) {
         <Route exact path="/about" component={About} />
         <Route exact path="/projects" component={() => <ProjectCards user={user} />} />
         <Route exact path="/tech" component={() => <TechUsed user={user} />} />
-        <Route exact path="/editprojects" component={() => <EditProjects user={user} />} />
+        <Route exact path="/editprojects" component={() => <EditProjects user={user}/>} />
       </Switch>
     </div>
   );
 }
 Routes.propTypes = {
-  user: PropTypes.any,
+  user: PropTypes.any
 };
 export default Routes;

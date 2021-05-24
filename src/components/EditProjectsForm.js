@@ -6,7 +6,7 @@ import {
   Label,
   Input,
 } from 'reactstrap';
-import { updateProject, deleteProject } from '../helpers/data/ProjectData';
+import { updateProject, deleteProject, addProject } from '../helpers/data/ProjectData';
 
 function EditProjectsForm({ setProjects, ...projectInfo }) {
   const [editProject, setEditProject] = useState({
@@ -27,8 +27,12 @@ function EditProjectsForm({ setProjects, ...projectInfo }) {
   };
 
   const handleSubmit = (e) => {
-    e.preventDfault();
-    updateProject(editProject).then((projectArray) => setEditProject(projectArray));
+    e.preventDefault();
+    if (editProject.firebaseKey) {
+      updateProject(editProject).then((projectArray) => setEditProject(projectArray));
+    } else {
+      addProject(editProject).then((response) => setEditProject(response));
+    }
   };
 
   const goodbyeProject = () => {

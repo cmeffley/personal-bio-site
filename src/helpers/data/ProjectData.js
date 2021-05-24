@@ -28,6 +28,19 @@ const deleteProject = (firebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+// ADD PROJECT
+const addProject = (project) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/projects.json`, project)
+    .then((response) => {
+      const body = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/projects/${response.data.name}.json`, body)
+        .then(() => {
+          getAllProjects().then((projectsArray) => resolve(projectsArray));
+        });
+    })
+    .catch((error) => reject(error));
+});
+
 // GET ALL TECH
 const getTechUsed = () => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/tech.json`)
@@ -44,5 +57,6 @@ export {
   getAllProjects,
   getTechUsed,
   updateProject,
-  deleteProject
+  deleteProject,
+  addProject
 };
