@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import firebase from 'firebase/app';
+import firebase from 'firebase';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './App.scss';
 import Routes from '../helpers/Routes';
@@ -23,8 +23,8 @@ function App() {
   return (
     <div className='App'>
        <Router>
-        <NavBar user={admin}/>
-        <Routes user={admin}/>
+        <NavBar admin={admin}/>
+        <Routes admin={admin}/>
       </Router>
     </div>
   );
