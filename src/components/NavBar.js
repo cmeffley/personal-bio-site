@@ -7,15 +7,37 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
   NavItem,
   Button,
 } from 'reactstrap';
 import { signInUser, signOutUser } from '../helpers/auth';
 
-const NavBar = ({ user }) => {
+const NavBar = ({ admin }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+
+  const authenticated = () => (
+    <>
+       <UncontrolledDropdown nav inNavbar>
+          <DropdownToggle nav caret>
+            Admin Edit
+          </DropdownToggle>
+            <DropdownMenu right>
+              <DropdownItem>
+                <Link className="nav-link" to="/editprojects">Edit Projects</Link>
+              </DropdownItem>
+              <DropdownItem>
+                  Option 2
+              </DropdownItem>
+            </DropdownMenu>
+        </UncontrolledDropdown>
+    </>
+  );
 
   return (
     <div>
@@ -31,16 +53,14 @@ const NavBar = ({ user }) => {
               <Link className="nav-link" to="/projects">Projects</Link>
             </NavItem>
             <NavItem>
-              <Link className="nav-link" to="/tech">Tech Used</Link>
+              <Link className="nav-link" to="/tech">Technologies</Link>
             </NavItem>
-            <NavItem>
-              <Link className="nav-link" to="/editprojects">Edit Projects</Link>
-            </NavItem>
+            {admin && authenticated()}
           </Nav>
-          { user !== null
+          { admin !== null
             && <div className='auth-btn-container'>
                 {
-                  user ? <Button color='danger' onClick={signOutUser}>SignOut?</Button>
+                  admin ? <Button color='danger' onClick={signOutUser}>SignOut?</Button>
                     : <Button color='info' onClick={signInUser}>SignIN!</Button>
                 }
               </div>
@@ -51,6 +71,6 @@ const NavBar = ({ user }) => {
   );
 };
 NavBar.propTypes = {
-  user: PropTypes.any
+  admin: PropTypes.any
 };
 export default NavBar;

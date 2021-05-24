@@ -6,21 +6,28 @@ import About from '../views/About';
 import ProjectCards from '../views/ProjectCards';
 import TechUsed from '../views/TechUsed';
 import EditProjects from '../views/EditProjects';
+import AdminAuth from '../components/AdminAuth';
 
-function Routes({ user }) {
+function Routes({ admin }) {
   return (
     <div>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/projects" component={() => <ProjectCards user={user} />} />
-        <Route exact path="/tech" component={() => <TechUsed user={user} />} />
-        <Route exact path="/editprojects" component={() => <EditProjects user={user}/>} />
+        <Route exact path="/projects" component={() => <ProjectCards admin={admin} />} />
+        <Route exact path="/tech" component={() => <TechUsed admin={admin} />} />
+        <Route exact path="/editprojects"
+          admin={admin}
+          component={() => <EditProjects admin={admin}/>} />
+        <Route exact path="/auth"
+          admin={admin}
+          component={() => <AdminAuth admin={admin} />}
+        />
       </Switch>
     </div>
   );
 }
 Routes.propTypes = {
-  user: PropTypes.any
+  admin: PropTypes.any,
 };
 export default Routes;
