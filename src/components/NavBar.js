@@ -32,7 +32,7 @@ const NavBar = ({ admin }) => {
                 <Link className="nav-link" to="/editprojects">Edit Projects</Link>
               </DropdownItem>
               <DropdownItem>
-                  Option 2
+                <Link className="nav-link" to="/edittech">Edit Tech</Link>
               </DropdownItem>
             </DropdownMenu>
         </UncontrolledDropdown>

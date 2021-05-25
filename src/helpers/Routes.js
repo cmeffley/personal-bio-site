@@ -6,6 +6,7 @@ import About from '../views/About';
 import ProjectCards from '../views/ProjectCards';
 import TechUsed from '../views/TechUsed';
 import EditProjects from '../views/EditProjects';
+import EditTech from '../views/EditTech';
 import AdminAuth from '../components/AdminAuth';
 
 function Routes({ admin }) {
@@ -15,10 +16,14 @@ function Routes({ admin }) {
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
         <Route exact path="/projects" component={() => <ProjectCards admin={admin} />} />
-        <Route exact path="/tech" component={() => <TechUsed admin={admin} />} />
+        <Route exact path="/tech" admin={admin}
+          component={() => <TechUsed admin={admin} />} />
         <Route exact path="/editprojects"
           admin={admin}
           component={() => <EditProjects admin={admin}/>} />
+        <Route exact path="/edittech"
+          admin={admin}
+          component={() => <EditTech admin={admin}/>} />
         <Route exact path="/auth"
           admin={admin}
           component={() => <AdminAuth admin={admin} />}

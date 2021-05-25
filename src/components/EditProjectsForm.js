@@ -8,7 +8,9 @@ import {
 } from 'reactstrap';
 import { updateProject, deleteProject, addProject } from '../helpers/data/ProjectData';
 
-function EditProjectsForm({ setProjects, ...projectInfo }) {
+function EditProjectsForm({
+  admin, setChangeProjects, ...projectInfo
+}) {
   const [editProject, setEditProject] = useState({
     title: projectInfo?.title || '',
     screenshot: projectInfo?.screenshot || '',
@@ -29,21 +31,21 @@ function EditProjectsForm({ setProjects, ...projectInfo }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (editProject.firebaseKey) {
-      updateProject(editProject).then((projectArray) => setEditProject(projectArray));
+      updateProject(editProject, admin).then((project) => setChangeProjects(project));
     } else {
-      addProject(editProject).then((response) => setEditProject(response));
+      addProject(editProject, admin).then((response) => setChangeProjects(response));
     }
   };
 
   const goodbyeProject = () => {
-    deleteProject(projectInfo.firebaseKey).then((projectArray) => setProjects(projectArray));
+    deleteProject(projectInfo.firebaseKey, admin).then((projectArray) => setChangeProjects(projectArray));
   };
 
   return (
     <div className='edit-form'>
       <Form
         id='editProjects'
-        onChange={handleSubmit}
+        onSubmit={handleSubmit}
       >
         <h2>Edit Project</h2>
         <Label>Title</Label>
@@ -95,7 +97,7 @@ function EditProjectsForm({ setProjects, ...projectInfo }) {
         >
         </Input>
         <Button color='success' type='submit'>Submit</Button>
-        <Button color='danger' type='submit' onClick={goodbyeProject}>Delete</Button>
+        <Button color='danger' onClick={goodbyeProject}>Delete</Button>
       </Form>
       <hr />
     </div>
@@ -104,7 +106,8 @@ function EditProjectsForm({ setProjects, ...projectInfo }) {
 
 EditProjectsForm.propTypes = {
   projectInfo: PropTypes.object,
-  setProjects: PropTypes.func
+  admin: PropTypes.any,
+  setChangeProjects: PropTypes.func
 };
 
 export default EditProjectsForm;
