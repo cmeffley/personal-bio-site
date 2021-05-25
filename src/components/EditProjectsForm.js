@@ -8,7 +8,7 @@ import {
 } from 'reactstrap';
 import { updateProject, deleteProject, addProject } from '../helpers/data/ProjectData';
 
-function EditProjectsForm({ setProjects, ...projectInfo }) {
+function EditProjectsForm({ admin, setProjects, ...projectInfo }) {
   const [editProject, setEditProject] = useState({
     title: projectInfo?.title || '',
     screenshot: projectInfo?.screenshot || '',
@@ -29,9 +29,9 @@ function EditProjectsForm({ setProjects, ...projectInfo }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (editProject.firebaseKey) {
-      updateProject(editProject).then((projectArray) => setEditProject(projectArray));
+      updateProject(editProject, admin).then((projectArray) => setEditProject(projectArray));
     } else {
-      addProject(editProject).then((response) => setEditProject(response));
+      addProject(editProject, admin).then((response) => setEditProject(response));
     }
   };
 
@@ -104,7 +104,8 @@ function EditProjectsForm({ setProjects, ...projectInfo }) {
 
 EditProjectsForm.propTypes = {
   projectInfo: PropTypes.object,
-  setProjects: PropTypes.func
+  setProjects: PropTypes.func,
+  admin: PropTypes.any
 };
 
 export default EditProjectsForm;

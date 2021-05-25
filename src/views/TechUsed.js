@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getTechUsed } from '../helpers/data/ProjectData';
+import { getTechUsed } from '../helpers/data/TechData';
 import Tech from '../components/Tech';
 
 function TechUsed() {
