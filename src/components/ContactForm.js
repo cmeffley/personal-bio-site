@@ -11,6 +11,10 @@ function ContactForm() {
     <>
       <Form
         id='contact'
+        name='contact'
+        method='POST'
+        data-netlify-recaptcha='true'
+        data-netlify='true'
         // onSubmit={handleSubmit}
         >
         <Label>Name</Label>
@@ -31,7 +35,8 @@ function ContactForm() {
           type='textarea'
         >
         </Input>
-        <Button outline color='primary' type='submit'>Submit</Button>
+        <div data-netlify-recaptcha='true'></div>
+        <Button outline color='primary' type='submit'>Send Message</Button>
       </Form>
     </>
   );

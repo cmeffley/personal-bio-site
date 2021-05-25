@@ -4,7 +4,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './App.scss';
 import Routes from '../helpers/Routes';
 import NavBar from '../components/NavBar';
-import Contact from '../views/Contact';
 
 function App() {
   const [admin, setAdmin] = useState(null);
@@ -27,7 +26,6 @@ function App() {
         <NavBar admin={admin}/>
         <Routes admin={admin}/>
       </Router>
-      <Contact/>
     </div>
   );
 }
