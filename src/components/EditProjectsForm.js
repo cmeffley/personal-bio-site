@@ -9,7 +9,7 @@ import {
 import { updateProject, deleteProject, addProject } from '../helpers/data/ProjectData';
 
 function EditProjectsForm({
-  admin, setChangeProjects, ...projectInfo
+  admin, setChangeProjects, formTitle, ...projectInfo
 }) {
   const [editProject, setEditProject] = useState({
     title: projectInfo?.title || '',
@@ -47,7 +47,7 @@ function EditProjectsForm({
         id='editProjects'
         onSubmit={handleSubmit}
       >
-        <h2>Edit Project</h2>
+        <h2>{formTitle}</h2>
         <Label>Title</Label>
         <Input
           name='title'
@@ -107,7 +107,8 @@ function EditProjectsForm({
 EditProjectsForm.propTypes = {
   projectInfo: PropTypes.object,
   admin: PropTypes.any,
-  setChangeProjects: PropTypes.func
+  setChangeProjects: PropTypes.func,
+  formTitle: PropTypes.string
 };
 
 export default EditProjectsForm;
