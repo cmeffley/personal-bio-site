@@ -6,9 +6,9 @@ import {
   Label,
   Input,
 } from 'reactstrap';
-import { addTech, updateTech } from '../helpers/data/TechData';
+import { addTech, updateTech, deleteTech } from '../helpers/data/TechData';
 
-function EditTechForm({ admin, setTech, ...changeTechInfo }) {
+function EditTechForm({ admin, setChangeTech, ...changeTechInfo }) {
   const [editTech, setEditTech] = useState({
     icon: changeTechInfo?.icon || '',
     firebaseKey: changeTechInfo?.firebaseKey || null
@@ -24,9 +24,9 @@ function EditTechForm({ admin, setTech, ...changeTechInfo }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (editTech.firebaseKey) {
-      updateTech(editTech, admin).then((techArray) => setEditTech(techArray));
+      updateTech(editTech, admin).then((tech) => setChangeTech(tech));
     } else {
-      addTech(editTech, admin).then((techArray) => setEditTech(techArray));
+      addTech(editTech, admin).then((response) => setChangeTech(response));
 
       setEditTech({
         name: '',
@@ -38,15 +38,15 @@ function EditTechForm({ admin, setTech, ...changeTechInfo }) {
     }
   };
 
-  // const goodbyeTech = () => {
-  //   deleteTech(changeTechInfo.firebaseKey, admin).then((techArray) => setTech(techArray));
-  // };
+  const goodbyeTech = () => {
+    deleteTech(changeTechInfo.firebaseKey, admin).then((techArray) => setChangeTech(techArray));
+  };
 
   return (
     <div>
       <Form
         id='edittechnology'
-        onChange={handleSubmit}>
+        onSubmit={handleSubmit}>
       <Label>Icon</Label>
         <Input
           name='icon'
@@ -56,7 +56,7 @@ function EditTechForm({ admin, setTech, ...changeTechInfo }) {
         >
         </Input>
         <Button color='success' type='submit'>Submit</Button>
-        <Button color='danger' type='submit'>Delete</Button>
+        <Button color='danger' onClick={goodbyeTech}>Delete</Button>
       </Form>
     </div>
   );
@@ -64,7 +64,7 @@ function EditTechForm({ admin, setTech, ...changeTechInfo }) {
 
 EditTechForm.propTypes = {
   techInfo: PropTypes.array,
-  setTech: PropTypes.func,
+  setChangeTech: PropTypes.func,
   admin: PropTypes.any
 };
 
