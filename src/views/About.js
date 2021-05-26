@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
 import picOfMe from '../assets/picOfMe.jpg';
+import Contact from './Contact';
 
 function About() {
   return (
@@ -27,7 +28,7 @@ function About() {
           icon='mail outline'
           a href='mailto: cmeffley@gmail.com'
           size='huge'
-        />
+        /><Contact/>
         </div>
         <img src={picOfMe} className='myPic' />
       </div>
