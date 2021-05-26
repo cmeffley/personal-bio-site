@@ -56,6 +56,9 @@ const NavBar = ({ admin }) => {
             <NavItem>
               <HashLink className='nav-link' smooth to='#tech'>Technologies</HashLink>
             </NavItem>
+            <NavItem>
+              <HashLink className='nav-link' smooth to='#footer'>Connect</HashLink>
+            </NavItem>
             {admin && authenticated()}
           </Nav>
           { admin !== null

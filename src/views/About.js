@@ -15,19 +15,19 @@ function About() {
           inverted
           icon='github'
           a href='https://github.com/cmeffley'
-          size='huge'
+          size='large'
         />
         <Button
           inverted
           icon='linkedin'
           a href='https://www.linkedin.com/in/chrismeffley/'
-          size='huge'
+          size='large'
         />
         <Button
           inverted
           icon='mail outline'
           a href='mailto: cmeffley@gmail.com'
-          size='huge'
+          size='large'
         /><Contact/>
       </div>
         <img src={picOfMe} className='myPic' />

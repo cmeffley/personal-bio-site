@@ -102,4 +102,15 @@ body {
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
+  height: 100vh;
+}
+
+#footer {
+  background-color: black;
+  color: white;
+  min-height: 100%;
+}
+
+.open-contact-btn {
+  height: 40px;
 }
