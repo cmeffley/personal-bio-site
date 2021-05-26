@@ -33,7 +33,16 @@ function EditProjectsForm({
     if (editProject.firebaseKey) {
       updateProject(editProject, admin).then((project) => setChangeProjects(project));
     } else {
-      addProject(editProject, admin).then((response) => setChangeProjects(response));
+      addProject(editProject, admin).then((response) => setEditProject(response));
+      setEditProject({
+        title: '',
+        screenshot: '',
+        description: '',
+        technologiesUsed: '',
+        githubUrl: '',
+        url: '',
+        firebaseKey: null
+      });
     }
   };
 

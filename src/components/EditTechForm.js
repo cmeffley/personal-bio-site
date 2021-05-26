@@ -28,7 +28,11 @@ function EditTechForm({
     if (editTech.firebaseKey) {
       updateTech(editTech, admin).then((tech) => setChangeTech(tech));
     } else {
-      addTech(editTech, admin).then((response) => setChangeTech(response));
+      addTech(editTech, admin).then((response) => setEditTech(response));
+      setEditTech({
+        icon: '',
+        firebaseKey: null
+      });
     }
   };
 
