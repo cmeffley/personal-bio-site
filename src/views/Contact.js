@@ -13,8 +13,8 @@ function Contact() {
 
   const toggle = () => setModal(!modal);
   return (
-    <div>
-    <Button inverted onClick={toggle}>Contact Me</Button>
+    <>
+    <Button className='open-contact-btn' inverted onClick={toggle}>Contact Me</Button>
     <Modal isOpen={modal} toggle={toggle} className='contact-modal'>
       <ModalHeader toggle={toggle}>Contact Me</ModalHeader>
       <ModalBody>
@@ -24,7 +24,7 @@ function Contact() {
         <Button basic color='black' onClick={toggle}>Cancel</Button>
       </ModalFooter>
     </Modal>
-  </div>
+  </>
   );
 }
 

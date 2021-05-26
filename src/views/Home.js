@@ -3,6 +3,7 @@ import { Icon } from 'semantic-ui-react';
 import About from './About';
 import ProjectCards from './ProjectCards';
 import TechUsed from './TechUsed';
+import Footer from './Footer';
 import front from '../assets/front.png';
 import side from '../assets/side.png';
 import mountain from '../assets/mountain.png';
@@ -41,6 +42,7 @@ function Home() {
       <About/>
       <ProjectCards/>
       <TechUsed/>
+      <Footer/>
     </div>
   );
 }
