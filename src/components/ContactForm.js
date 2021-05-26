@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   Form,
@@ -7,6 +7,19 @@ import {
 } from 'reactstrap';
 
 function ContactForm() {
+  const [edit, setEdit] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const formInputChange = (e) => {
+    setEdit((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value
+    }));
+  };
+
   return (
     <>
       <Form
@@ -15,24 +28,34 @@ function ContactForm() {
         method='POST'
         data-netlify-recaptcha='true'
         data-netlify='true'
-        // onSubmit={handleSubmit}
+        onSubmit='submit'
         >
+        <Input type='hidden'
+          name='form-name'
+          value='contact'
+        />
         <Label>Name</Label>
         <Input
           name='name'
           type='text'
+          value={edit.name}
+          onChange={formInputChange}
         >
         </Input>
         <Label>Email</Label>
         <Input
           name='email'
-          type='text'
+          type='email'
+          value={edit.email}
+          onChange={formInputChange}
         >
         </Input>
         <Label>Message</Label>
         <Input
           name='message'
           type='textarea'
+          value={edit.message}
+          onChange={formInputChange}
         >
         </Input>
         <div data-netlify-recaptcha='true'></div>
