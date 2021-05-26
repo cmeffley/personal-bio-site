@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Icon } from 'semantic-ui-react';
+import About from './About';
+import ProjectCards from './ProjectCards';
+import TechUsed from './TechUsed';
 import front from '../assets/front.png';
 import side from '../assets/side.png';
 import mountain from '../assets/mountain.png';
@@ -35,6 +38,9 @@ function Home() {
         />
         <Icon id='arrowIcon' name='angle double down' size='big'/>
       </header>
+      <About/>
+      <ProjectCards/>
+      <TechUsed/>
     </div>
   );
 }
