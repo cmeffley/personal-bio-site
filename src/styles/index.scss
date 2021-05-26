@@ -1,6 +1,7 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import 'variables';
 @import 'about';
+@import 'projects';
 
 body {
   background-color: $favColor;
@@ -92,8 +93,8 @@ body {
 }
 
 #iconPic {
-  height: 75px;
-  width: 75px;
+  height: 100px;
+  width: 100px;
 }
 
 #tech {
