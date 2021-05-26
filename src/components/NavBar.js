@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import PropTypes from 'prop-types';
 import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
+  // NavbarBrand,
   Nav,
   UncontrolledDropdown,
   DropdownToggle,
@@ -29,10 +30,10 @@ const NavBar = ({ admin }) => {
           </DropdownToggle>
             <DropdownMenu right>
               <DropdownItem>
-                <Link className="nav-link" to="/editprojects">Edit Projects</Link>
+                <Link className='nav-link' to='/editprojects'>Edit Projects</Link>
               </DropdownItem>
               <DropdownItem>
-                <Link className="nav-link" to="/edittech">Edit Tech</Link>
+                <Link className='nav-link' to='/edittech'>Edit Tech</Link>
               </DropdownItem>
             </DropdownMenu>
         </UncontrolledDropdown>
@@ -41,19 +42,19 @@ const NavBar = ({ admin }) => {
 
   return (
     <div>
-      <Navbar className='navigation' color="light" light expand="md">
-        <NavbarBrand href="/">Chris Meffley</NavbarBrand>
+      <Navbar className='navigation' color='light' light expand='md' sticky='top'>
+        <Link className='navbar-brand' to='/'>Chris Meffley</Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
+          <Nav className='mr-auto' navbar>
             <NavItem>
-              <Link className="nav-link" to="/about">About</Link>
+              <HashLink className='nav-link' smooth to='#about'>About</HashLink>
             </NavItem>
             <NavItem>
-              <Link className="nav-link" to="/projects">Projects</Link>
+              <HashLink className='nav-link' smooth to='#projects'>Projects</HashLink>
             </NavItem>
             <NavItem>
-              <Link className="nav-link" to="/tech">Technologies</Link>
+              <HashLink className='nav-link' smooth to='#tech'>Technologies</HashLink>
             </NavItem>
             {admin && authenticated()}
           </Nav>

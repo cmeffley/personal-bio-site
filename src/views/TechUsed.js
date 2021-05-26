@@ -8,7 +8,7 @@ function TechUsed() {
     getTechUsed().then((response) => setTech(response));
   }, []);
   return (
-    <div id='tech-container'>
+    <div id='tech'>
       {tech.map((techInfo) => (
         <Tech
         key={techInfo.firebaseKey}
