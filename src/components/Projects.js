@@ -12,11 +12,13 @@ function Projects({
   ...projectInfo
 }) {
   return (
-    <div>
-      <Card>
-        <CardTitle tag='h3'>{projectInfo.title}</CardTitle>
-        <CardBody>
+    <div className='project-container'>
+      <Card className='project-card'>
+          <div className='image-container'>
           <CardImg id='screenshot' src={projectInfo.screenshot} />
+          <CardTitle tag='h3'>{projectInfo.title}</CardTitle>
+          </div>
+        <CardBody className='card-body'>
           <CardText>{projectInfo.description}</CardText>
           <CardText>{projectInfo.technologiesUsed}</CardText>
           <CardText><a href={projectInfo.githubUrl}>GitHub Repository</a></CardText>
