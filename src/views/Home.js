@@ -3,7 +3,6 @@ import { Icon } from 'semantic-ui-react';
 import front from '../assets/front.png';
 import side from '../assets/side.png';
 import mountain from '../assets/mountain.png';
-import About from './About';
 
 function Home() {
   const [offSetY, setOffSetY] = useState(0);
@@ -17,7 +16,7 @@ function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   return (
-    <>
+    <div id='home'>
       <h1 className='greeting'
         style={{ transform: `translateY(-${offSetY * 0.8}px)` }}
       >Hello</h1>
@@ -36,8 +35,7 @@ function Home() {
         />
         <Icon id='arrowIcon' name='angle double down' size='big'/>
       </header>
-      <About />
-    </>
+    </div>
   );
 }
 

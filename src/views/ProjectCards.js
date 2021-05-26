@@ -10,7 +10,7 @@ function ProjectCards() {
   }, []);
 
   return (
-    <div id='card-container'>
+    <div id='projects'>
       {projects.map((projectInfo) => (
         <Projects
           key={projectInfo.firebaseKey}
