@@ -29,7 +29,7 @@ function About() {
           a href='mailto: cmeffley@gmail.com'
           size='huge'
         /><Contact/>
-        </div>
+      </div>
         <img src={picOfMe} className='myPic' />
       </div>
     </div>

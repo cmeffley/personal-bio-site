@@ -42,8 +42,8 @@ const NavBar = ({ admin }) => {
 
   return (
     <div>
-      <Navbar className='navigation' color="light" light expand="md">
-        <Link className='navbar-brand' to="/">Chris Meffley</Link>
+      <Navbar className='navigation' color='light' light expand='md' sticky='top'>
+        <Link className='navbar-brand' to='/'>Chris Meffley</Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className='mr-auto' navbar>
