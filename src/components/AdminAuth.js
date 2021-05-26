@@ -10,8 +10,8 @@ function AdminAuth({ admin }) {
        { admin !== null
             && <div className='auth-btn-container'>
                 {
-                  admin ? <Button color='danger' onClick={signOutUser}>SignOut?</Button>
-                    : <Button color='info' onClick={signInUser}>SignIN!</Button>
+                  admin ? <Button color='danger' onClick={signOutUser}>SignOut</Button>
+                    : <Button color='info' onClick={signInUser}>Admin</Button>
                 }
               </div>
             }
