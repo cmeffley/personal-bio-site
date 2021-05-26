@@ -8,7 +8,9 @@ import {
 } from 'reactstrap';
 import { addTech, updateTech, deleteTech } from '../helpers/data/TechData';
 
-function EditTechForm({ admin, setChangeTech, ...changeTechInfo }) {
+function EditTechForm({
+  admin, setChangeTech, formTitle, ...changeTechInfo
+}) {
   const [editTech, setEditTech] = useState({
     icon: changeTechInfo?.icon || '',
     firebaseKey: changeTechInfo?.firebaseKey || null
@@ -26,13 +28,9 @@ function EditTechForm({ admin, setChangeTech, ...changeTechInfo }) {
     if (editTech.firebaseKey) {
       updateTech(editTech, admin).then((tech) => setChangeTech(tech));
     } else {
-      addTech(editTech, admin).then((response) => setChangeTech(response));
-
+      addTech(editTech, admin).then((response) => setEditTech(response));
       setEditTech({
-        name: '',
-        imageUrl: '',
-        position: '',
-        country: '',
+        icon: '',
         firebaseKey: null
       });
     }
@@ -46,7 +44,9 @@ function EditTechForm({ admin, setChangeTech, ...changeTechInfo }) {
     <div>
       <Form
         id='edittechnology'
-        onSubmit={handleSubmit}>
+        onSubmit={handleSubmit}
+      >
+        <h2>{formTitle}</h2>
       <Label>Icon</Label>
         <Input
           name='icon'
@@ -65,7 +65,8 @@ function EditTechForm({ admin, setChangeTech, ...changeTechInfo }) {
 EditTechForm.propTypes = {
   techInfo: PropTypes.array,
   setChangeTech: PropTypes.func,
-  admin: PropTypes.any
+  admin: PropTypes.any,
+  formTitle: PropTypes.string
 };
 
 export default EditTechForm;
