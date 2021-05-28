@@ -13,9 +13,7 @@ import {
   DropdownMenu,
   DropdownItem,
   NavItem,
-  Button,
 } from 'reactstrap';
-import { signInUser, signOutUser } from '../helpers/auth';
 
 const NavBar = ({ admin }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,12 +39,15 @@ const NavBar = ({ admin }) => {
   );
 
   return (
-    <div>
+    <>
       <Navbar className='navigation' color='light' light expand='md' sticky='top'>
         <Link className='navbar-brand' to='/'>Chris Meffley</Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className='mr-auto' navbar>
+          <Nav className='ml-auto' navbar>
+            <NavItem>
+              <Link className='nav-link' to='/'>Home</Link>
+            </NavItem>
             <NavItem>
               <HashLink className='nav-link' smooth to='#about'>About</HashLink>
             </NavItem>
@@ -61,17 +62,9 @@ const NavBar = ({ admin }) => {
             </NavItem>
             {admin && authenticated()}
           </Nav>
-          { admin !== null
-            && <div className='auth-btn-container'>
-                {
-                  admin ? <Button color='danger' onClick={signOutUser}>SignOut?</Button>
-                    : <Button color='info' onClick={signInUser}>SignIN!</Button>
-                }
-              </div>
-            }
         </Collapse>
       </Navbar>
-    </div>
+    </>
   );
 };
 NavBar.propTypes = {

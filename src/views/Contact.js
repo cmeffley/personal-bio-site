@@ -14,7 +14,7 @@ function Contact() {
   const toggle = () => setModal(!modal);
   return (
     <>
-    <Button className='open-contact-btn' inverted onClick={toggle}>Contact Me</Button>
+    <Button className='open-contact-btn' inverted onClick={toggle}>Message Me</Button>
     <Modal isOpen={modal} toggle={toggle} className='contact-modal'>
       <ModalHeader toggle={toggle}>Contact Me</ModalHeader>
       <ModalBody>

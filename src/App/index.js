@@ -7,7 +7,6 @@ import NavBar from '../components/NavBar';
 
 function App() {
   const [admin, setAdmin] = useState(null);
-  // const [loggedInUser, setLoggedInUser] = useState(null);
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((authed) => {
@@ -15,7 +14,6 @@ function App() {
         setAdmin(true);
       } else if (admin || admin === null) {
         setAdmin(false);
-        // setLoggedInUser(false);
       }
     });
   }, []);
