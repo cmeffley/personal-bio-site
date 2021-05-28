@@ -6,7 +6,7 @@ import { signInUser, signOutUser } from '../helpers/auth';
 function AdminAuth({ admin }) {
   return (
     <div>
-      <h1>hello world</h1>
+      <h1>If you are an Admin, you must answer me these questions three...</h1>
        { admin !== null
             && <div className='auth-btn-container'>
                 {
