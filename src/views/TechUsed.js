@@ -9,6 +9,7 @@ function TechUsed() {
   }, []);
   return (
     <div id='tech'>
+      <h2>Technologies</h2>
       {tech.map((techInfo) => (
         <Tech
         key={techInfo.firebaseKey}
