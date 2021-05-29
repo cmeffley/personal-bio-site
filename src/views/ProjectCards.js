@@ -11,6 +11,7 @@ function ProjectCards() {
 
   return (
     <div id='projects'>
+      <h2 className='projectsTitle'>Recent Projects</h2>
       {projects.map((projectInfo) => (
         <Projects
           key={projectInfo.firebaseKey}

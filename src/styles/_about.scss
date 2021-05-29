@@ -11,10 +11,13 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  // justify-content: center;
   height: 100vh;
 }
 
 .aboutMe {
   text-align: left;
+}
+
+p {
+  line-height: 1.6;
 }

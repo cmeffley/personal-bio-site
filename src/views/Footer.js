@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
+import { HashLink } from 'react-router-hash-link';
 import Contact from './Contact';
 
 function Footer() {
@@ -9,7 +10,7 @@ function Footer() {
         <div className='row'>
           <div className='col'>
             <h4>Thank you for visiting my Portfolio Site</h4>
-            <p>Special thank you to Roy at <a href='mailto:     perfectcapturesphoto@gmail.com'>Perfect Captures Photo</a> for helping create the home photo!
+            <p>Special thank you to Roy at <a href='mailto:     perfectcapturesphoto@gmail.com'>Perfect Captures Photo</a> for helping with the home photo!
             </p>
           </div>
           <div className='col'>
@@ -35,6 +36,9 @@ function Footer() {
             <Contact/>
           </div>
         </div>
+        <HashLink to='#top'>
+          <Button inverted icon='angle double up'/>
+        </HashLink>
         <hr color='white'/>
         <div className='row'>
           <p className='col-sm'>
