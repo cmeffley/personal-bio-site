@@ -7,11 +7,12 @@ import {
   Navbar,
   NavbarToggler,
   Nav,
+  NavbarBrand,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  NavItem,
+  // NavItem,
 } from 'reactstrap';
 
 const NavBar = ({ admin }) => {
@@ -44,21 +45,21 @@ const NavBar = ({ admin }) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className='ml-auto' navbar>
-            <NavItem>
+            <NavbarBrand>
               <Link className='nav-link' to='/'>Home</Link>
-            </NavItem>
-            <NavItem>
+            </NavbarBrand>
+            <NavbarBrand>
               <HashLink className='nav-link' smooth to='#about'>About</HashLink>
-            </NavItem>
-            <NavItem>
+            </NavbarBrand>
+            <NavbarBrand>
               <HashLink className='nav-link' smooth to='#projects'>Projects</HashLink>
-            </NavItem>
-            <NavItem>
+            </NavbarBrand>
+            <NavbarBrand>
               <HashLink className='nav-link' smooth to='#tech'>Technologies</HashLink>
-            </NavItem>
-            <NavItem>
+            </NavbarBrand>
+            <NavbarBrand>
               <HashLink className='nav-link' smooth to='#footer'>Connect</HashLink>
-            </NavItem>
+            </NavbarBrand>
             {admin && authenticated()}
           </Nav>
         </Collapse>
