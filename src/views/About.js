@@ -8,10 +8,10 @@ function About() {
     <div id='about'>
       <div className='about-container'>
       <div className='aboutMe'>
-        <h2>I am a Full Stack Web Developer</h2><br/>
-          <p>I have been a zookeeper for almost a decade, and most recently a veterinary technician. During the pandemic, I returned to zookeeping but really starting thinking about a new career that would continue to challenge me for years to come.</p>
-          <p>So how did I get from animal care to Nashville Software School? I have always been intrigued by how things work, and there are several similarities between web development and animal care. You have to be adaptable, a problem solver, think outside the box and a valuable team member.</p>
-          <p>I am an avid hiker, Ironman finisher and Eagle Scout. I enjoy learning and trying new things, and I hope to find my version of success in the web development community. </p>
+        <h2>I am a Software Engineer</h2><br/>
+          <p>I was in the animal care field for over a decade before I became a software engineer. I discovered many similarities between my old career and new one, including: problem solving, efficient communication, adaptability and passion.</p>
+          <p>I graduated from Nashville Software School in January of 2022 and have been eager to continue my education and broaden my knowledge as much as possible.</p>
+          <p>If I am not in front of my computer, you will find me outside hiking, cycling or training for my next endurance adventure.</p>
         <Button
           inverted
           icon='github'
