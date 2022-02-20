@@ -10,7 +10,7 @@ My name is Chris Meffley and I am a soon to be Full Stack Web Developer. This is
 
 ### [Github Project Repository](https://github.com/cmeffley/personal-bio-site/projects)
 
-![2021-05-29](https://user-images.githubusercontent.com/76795299/120075253-81b52500-c06e-11eb-90f7-bba0b7c32d74.png)
+![2022-02-19](https://user-images.githubusercontent.com/76795299/154824166-70f26687-7bf8-4093-99d2-a782d7fd2b3e.png)
 
 ### Contributor
 [Chris Meffley](https://github.com/cmeffley)
